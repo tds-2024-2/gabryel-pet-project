@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "vscjava.vscode-java-pack",
+        "redhat.java",
+        "vscjava.vscode-gradle",
+        "visualstudioexptteam.vscodeintellicode",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "vmware.vscode-boot-dev-pack",
+        "editorconfig.editorconfig"
+    ]
+}
