@@ -7,21 +7,23 @@ import org.example.entity.Turma;
 
 public class AlunoRepositoryFake implements AlunoRepository {
 
+  private Aluno aluno;
+
+  public AlunoRepositoryFake() {
+    this.aluno = new Aluno(20221111, "Alisson");
+  }
+
   @Override
   public Optional<Aluno> findByNumeroMatricula(int numeroMatricula) {
-
-    if (numeroMatricula == 20221111) {
-      Aluno a = new Aluno();
-      a.setNome("Alisson");
-      a.setMatricula(20221111);
-      return Optional.of(a);
+    if (numeroMatricula == aluno.getMatricula()) {
+      return Optional.of(aluno);
     }
+
     return Optional.empty();
   }
 
   @Override
   public List<Turma> findAllTurmas() {
-    // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'findAllTurmas'");
   }
 }

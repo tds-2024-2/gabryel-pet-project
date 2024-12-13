@@ -6,6 +6,15 @@ public class Disciplina {
   private String codigo;
   private int cargaHoraria;
 
+  public Disciplina() {
+  }
+
+  public Disciplina(String nome, String codigo, int cargaHoraria) {
+    this.nome = nome;
+    this.codigo = codigo;
+    this.cargaHoraria = cargaHoraria;
+  }
+
   public String getNome() {
     return nome;
   }
