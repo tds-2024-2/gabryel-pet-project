@@ -35,7 +35,7 @@ public class MatriculaService {
         .findByCodigo(codigoTurma)
         .orElseThrow(() -> new NotFoundException("Turma " + codigoTurma + " não encontrada"));
 
-    if (turma.isAlunoMatriculado(aluno)) { // teste faltando
+    if (turma.isAlunoMatriculado(aluno)) {
       throw new DomainException(
           "Aluno " + numeroMatricula + " já matriculado na turma " + turma.getCodigo());
     }
@@ -49,7 +49,7 @@ public class MatriculaService {
           .toList();
 
       if (historicoDisciplina.stream().anyMatch(t -> t.getMatriculas().stream() // teste faltando
-          .anyMatch(m -> Status.APROVADO.equals(m.getStatus())))) {
+          .anyMatch(m -> Matricula.Status.APROVADO.equals(m.getStatus())))) {
 
         throw new DomainException("Aluno %d já foi aprovado em disciplina %s"
             .formatted(numeroMatricula, disciplina.getCodigo()));

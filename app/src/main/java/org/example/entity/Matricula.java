@@ -46,4 +46,10 @@ public class Matricula {
   public void setData(LocalDate data) {
     this.data = data;
   }
+
+  @Override
+  public String toString() {
+    return "Matricula [codigo=" + codigo + ", aluno=" + aluno + ", status=" + status + ", data=" + data + "]";
+  }
+  
 }
